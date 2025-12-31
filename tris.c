@@ -8,6 +8,7 @@ struct Player {
 char name[5];
 char mark;
 bool type;
+int winCount;
 };
 //introduction message with mode selection
 bool printIntro (void) {
@@ -145,7 +146,9 @@ int main () {
         getName(&player1);
         strcpy(player2.name, "CPU");
         player1.type = true;
-        player2.type = false; 
+        player2.type = false;
+        player1.winCount = 0;
+        player2.winCount = 0;
     }
     else {
         printf("You chose to play against a friend!\n");
@@ -155,7 +158,9 @@ int main () {
         getName(&player1);
         getName(&player2);
         player1.type = true;
-        player2.type = true; 
+        player2.type = true;
+        player1.winCount = 0;
+        player2.winCount = 0;
     }
     //game start
     do {
@@ -194,10 +199,13 @@ int main () {
         if(win == 1) {
             if ((moveCount-1) % 2 == 0) {
                 printf("%s won!\n", player1.name);
+                player1.winCount++;
             }
             else {
                 printf("%s won!\n", player2.name);
+                player2.winCount++;
             }
+            printf("Score: %s %d - %d %s\n", player1.name, player1.winCount, player2.winCount, player2.name);
         }
         else {
             printf("Draw!\n");

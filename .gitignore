@@ -1,0 +1,8 @@
+# specific executables
+tris
+tris.exe
+a.out
+
+# other/temp executables
+*.o
+*.swp

@@ -29,7 +29,8 @@ In Tris you can:
 * play against the CPU;
 * play against a friend;
 * insert your(s) name(s);
-* play multiple times without restarting.
+* play multiple times without restarting;
+* keep track of your score.
 
 ## License
 
