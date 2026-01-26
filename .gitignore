@@ -2,7 +2,9 @@
 tris
 tris.exe
 a.out
+a.exe
 
 # other/temp executables
+*.txt
 *.o
 *.swp

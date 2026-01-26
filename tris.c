@@ -132,6 +132,21 @@ bool askRematch() {
     }
 }
 
+int saveResults(struct Player player1, struct Player player2) {
+    FILE *fptr = fopen("results.txt", "a"); //"a" to append instead of overwrtiting
+    //if fptrs is not null then it means either the file exists or it was created
+    if(fptr != NULL) {
+        fprintf(fptr, "%s %d - %d %s\n", player1.name, player1.winCount, player2.winCount, player2.name);
+        fclose(fptr); //closes the file after the write operation
+        printf("Results saved successfully!\n");
+        return 0; //exits the function
+    }
+    //if reading or creation failed we close the file and print the error
+    fclose(fptr);
+    printf("Error: File creation failed!\n");
+    return 1;
+}
+
 int main () {
     //initialise srand and main variables
     srand(time(NULL));
@@ -211,7 +226,8 @@ int main () {
             printf("Draw!\n");
         }
     }while(askRematch() == true);
-    //thanks the player(s) :)
+    //saves results and thanks the player(s) :)
+    saveResults(player1, player2);
     printf("Thanks for playing!\n");
 
     return 0;

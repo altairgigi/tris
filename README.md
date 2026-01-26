@@ -12,7 +12,7 @@ Execute from terminal or double click to start.
 
 Tris is a project aimed at testing and mastering a number of basic instructions in C, implementing the code DRY and compact while also ensuring readability.
 
-Tris is only 210 lines long and includes/ensures:
+Tris is less than 240 lines long and includes/ensures:
 * Structures
 * Functions
 * Cycles
@@ -20,6 +20,7 @@ Tris is only 210 lines long and includes/ensures:
 * Control flow
 * Handling errors
 * Handling user input
+* File management
 * Buffer management
 * ANSI codes
 
@@ -30,7 +31,8 @@ In Tris you can:
 * play against a friend;
 * insert your(s) name(s);
 * play multiple times without restarting;
-* keep track of your score.
+* keep track of your score;
+* save the scores as .txt file.
 
 ## License
 
